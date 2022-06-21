@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,84 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+ 
+.landingPage {
+  background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
+    background-repeat: no-repeat;
+    height:47rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-around; */
+     /* display:flex;
+
+    justify-content: center;
+    justify-content: space-around; */
+  }
+  
+  .landingButtons{ 
+    height:20%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    /* justify-items: center; */
+    /* align-items: center; */
+  }
+
+.homepage{
+  background-color: #1b1b1b;
+  height: 50rem
+}
+
+.loginPage{
+  background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
+  background-repeat: no-repeat;
+  height:47rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.loginButtons{
+  height:60%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signupPage{
+  /* background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
+  background-repeat: no-repeat;
+  height:47rem;
+  display:flex;
+  justify-content: space-around; */
+  background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
+  background-repeat: no-repeat;
+  height:47rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logout{
+  display:flex;
+  justify-content:flex-end;
+  padding-top:2%;
+  padding-right: 3%;
+  
+}
+
+#welcomeText{
+  color: aliceblue;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow',;
+  display: flex;
+  justify-content: center;
 }
