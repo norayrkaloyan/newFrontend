@@ -1,23 +1,40 @@
 import React from "react";
-import { Link,Navigate } from "react-router-dom";
+// import { Navigate, Link } from "react-router-dom";
 
 const LandingPage = () => {
-  const handleLogin = () => {
-    <Navigate to="/login" />;
-  };
+  //       const handleSubmit = () => {
+  //         // <Link to="/login" />;
+  //         <Navigate to="/login"/>
+  //       };
 
-  const handleSignup = () => {
-    <Link to="/signup" />;
-  };
+  //   const handleSignup = () => {
+  //     <Link to="signup" />;
+  //   };
   return (
-    <>
-      <button onClick={handleLogin} className="btn btn-primary">
-        Login
-      </button>
-      <button onClick={handleSignup} className="btn btn-primary">
-        Signup
-      </button>
-    </>
+    <div className="landingPage">
+      <div className="landingButtons">
+        <div>
+          <a
+            class="btn btn-outline-dark btn-lg"
+            href="/login"
+            role="button"
+            style={{ width: "100%" }}
+          >
+            Login
+          </a>
+        </div>
+        <div>
+          <a
+            class="btn btn-outline-dark btn-lg"
+            href="/signup"
+            role="button"
+            style={{ width: "100%" }}
+          >
+            Signup
+          </a>
+        </div>
+      </div>
+    </div>
   );
 };
 
