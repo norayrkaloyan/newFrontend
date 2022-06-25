@@ -1,7 +1,5 @@
-import axios from "axios";
-import { useState, useContext } from "react";
+import {  useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Navigate, Link } from "react-router-dom";
 import Logout from "./Logout";
 import LandingPage from "./LandingPage";
 
@@ -28,28 +26,46 @@ const HomePage = () => {
   //   }
   // };
 
-  
-
   return (
     <>
       {isAuthenticated ? (
         <>
           <div className="homepage">
-            {/* <a  id="logout"
-              class="btn btn-outline-primary "
-              href="/logout"
-              role="button"
-              style={{ width: "100%" }}
-            >
-              Signup
-            </a> */}
             <div id="logout">
               <Logout />
             </div>
-            <h1 id="welcomeText">What would you like to see?</h1>
-            <button className="btn btn-primary">
-              <Link to="#">calendar</Link>
-            </button>
+            <div className="what-to-see">
+              <h1 className="display-1">What would you like to see?</h1>
+              <div className="homepageButtons">
+                <a
+                  id="calendar"
+                  className="btn btn-outline-light "
+                  href="/calendar"
+                  role="button"
+                  // style={{ width: "50%" }}
+                >
+                  Calendar
+                </a>
+                <a
+                  id="addressbook"
+                  className="btn btn-outline-light "
+                  href="/addressbook"
+                  role="button"
+                  // style={{ width: "100%" }}
+                >
+                  Address Book
+                </a>
+                <a
+                  id="myentries"
+                  className="btn btn-outline-light "
+                  href="/myentries"
+                  role="button"
+                  // style={{ width: "100%" }}
+                >
+                  My Entries
+                </a>
+              </div>
+            </div>
           </div>
           {/* <h1>
             Du bist jetzt eingeloggt und kannst den Downloadbereich
@@ -66,7 +82,7 @@ const HomePage = () => {
           )} */}
         </>
       ) : (
-        <LandingPage/>
+        <LandingPage />
       )}
     </>
   );

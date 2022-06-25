@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 
-
 const Signup = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   //bei Form Submit post request an die API schicken
@@ -35,6 +34,7 @@ const Signup = () => {
   if (isAuthenticated) return <Navigate to="../homepage" />;
 
   return (
+    
     <div className="signupPage">
       <form onSubmit={handleSubmit}>
         <div className="my-3 row">
@@ -75,7 +75,7 @@ const Signup = () => {
           </div>
           <div>
             <a
-              class="btn btn-outline-dark btn-lg"
+              className="btn btn-outline-dark btn-lg"
               href="/login"
               role="button"
               style={{ width: "100%" }}

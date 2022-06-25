@@ -10,7 +10,8 @@ export const AuthContext = createContext();
 
 const AuthState = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
-
+  const [results, setResults] = useState(); //represents the articles we get as response
+  const [userInfo, setUserInfo] = useState(null);
   useEffect(() => {
     const token = localStorage.getItem("token");
     const checkIfTokenValid = async () => {
@@ -22,6 +23,26 @@ const AuthState = ({ children }) => {
           );
           if (res.status === 200) {
             setIsAuthenticated(true);
+            const getAllContactsByUserId = async () => {
+              // const token = localStorage.getItem("token");
+              await axios
+                .get(`${process.env.REACT_APP_API_URL}/info/me`, {
+                  headers: { token: token },
+                })
+                .then((res) => {
+                  console.log(res.data._id);
+                  setUserInfo(res.data._id);
+                })
+                .catch((err) => console.log(err));
+              await axios
+                .get(`${process.env.REACT_APP_API_URL}/contacts/${userInfo}`)
+                .then((res) => {
+                  console.log(res.data);
+                  setResults(res.data);
+                })
+                .catch((error) => console.log(error));
+            };
+            getAllContactsByUserId();
           }
         } catch (error) {
           console.log(error);
@@ -31,11 +52,11 @@ const AuthState = ({ children }) => {
       }
     };
     checkIfTokenValid();
-  }, []);
+  }, [userInfo]);
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, setIsAuthenticated }}
+      value={{ isAuthenticated, results, setResults, setIsAuthenticated }}
     >
       {children}
     </AuthContext.Provider>
