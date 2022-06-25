@@ -6,6 +6,9 @@ import LandingPage from "./components/LandingPage.js";
 import Login from "./components/Login.js";
 import Signup from "./components/Signup.js";
 import HomePage from "./components/HomePage.js";
+import NewAddress from "./components/NewAddress";
+import AddressBook from "./components/AddressBook";
+import MyEntries from "./components/MyEntries";
 
 function App() {
   return (
@@ -17,9 +20,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/post-login" element={<HomePage />} />
-        {/* <Route path="/downloads" element={<Download />} />
-         <Route path="/logout" element={<Logout />} />
-         <Route path="/calendar" element={<Calendar />}/> */}
+        <Route path="/newaddress" element={<NewAddress />} />
+        <Route path="/addressbook" element={<AddressBook />} />
+        <Route path="/myentries" element={<MyEntries />} />
       </Routes>
     </div>
 

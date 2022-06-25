@@ -27,7 +27,6 @@ const Login = () => {
       //token im localStorage speichern
       localStorage.setItem("token", token);
       setIsAuthenticated(true);
-      // <Navigate to="../homepage" />
     } catch (error) {
       console.log(error);
     }
@@ -36,57 +35,59 @@ const Login = () => {
   if (isAuthenticated) return <Navigate to="../homepage" />;
 
   return (
-    <div className="loginPage">
-      <form onSubmit={handleSubmit}>
-        <div className="my-3 row">
-          <label htmlFor="email" className="col-sm-2 col-form-label">
-            Email
-          </label>
-          <div className="col-sm-15">
-            <input
-              type="text"
-              className="form-control"
-              id="email"
-              name="email"
-            />
+    // <div className="loginback ">
+      <div className="loginPage">
+        <form onSubmit={handleSubmit}>
+          <div className="my-3 row">
+            <label htmlFor="email" className="col-sm-2 col-form-label">
+              Email
+            </label>
+            <div className="col-sm-15">
+              <input
+                type="text"
+                className="form-control"
+                id="email"
+                name="email"
+              />
+            </div>
           </div>
-        </div>
-        <div className="mb-3 row">
-          <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
-            Password
-          </label>
-          <div className="col-sm-15">
-            <input
-              type="password"
-              className="form-control"
-              id="inputPassword"
-              name="password"
-            />
+          <div className="mb-3 row">
+            <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+              Password
+            </label>
+            <div className="col-sm-15">
+              <input
+                type="password"
+                className="form-control"
+                id="inputPassword"
+                name="password"
+              />
+            </div>
           </div>
-        </div>
-        <div className="loginButtons">
-          <div>
-            <button
-              type="submit"
-              className="btn btn-dark btn-sm"
-              style={{ width: "100%" }}
-            >
-              Login
-            </button>
+          <div className="loginButtons">
+            <div>
+              <button
+                type="submit"
+                className="btn btn-dark btn-sm"
+                style={{ width: "100%" }}
+              >
+                Login
+              </button>
+            </div>
+            <div>
+              <a
+                className="btn btn-outline-dark btn-lg"
+                href="/signup"
+                role="button"
+                style={{ width: "100%" }}
+              >
+                Signup
+              </a>
+            </div>
           </div>
-          <div>
-            <a
-              class="btn btn-outline-dark btn-lg"
-              href="/signup"
-              role="button"
-              style={{ width: "100%" }}
-            >
-              Signup
-            </a>
-          </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    // </div>
   );
 };
 

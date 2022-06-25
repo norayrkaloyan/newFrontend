@@ -15,7 +15,7 @@ const LandingPage = () => {
       <div className="landingButtons">
         <div>
           <a
-            class="btn btn-outline-dark btn-lg"
+            className="btn btn-outline-dark btn-lg"
             href="/login"
             role="button"
             style={{ width: "100%" }}
@@ -25,7 +25,7 @@ const LandingPage = () => {
         </div>
         <div>
           <a
-            class="btn btn-outline-dark btn-lg"
+            className="btn btn-outline-dark btn-lg"
             href="/signup"
             role="button"
             style={{ width: "100%" }}

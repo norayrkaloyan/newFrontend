@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=FORUM");
+
 /* .App {
   text-align: center;
 }
@@ -37,82 +39,146 @@
   }
 } */
 
- 
 .landingPage {
   background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
-    background-repeat: no-repeat;
-    height:47rem;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    /* justify-content: space-around; */
-     /* display:flex;
+  background-repeat: no-repeat;
+  height: 47rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: space-around; */
+  /* display:flex;
 
     justify-content: center;
     justify-content: space-around; */
-  }
-  
-  .landingButtons{ 
-    height:20%;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: space-around;
-    /* justify-items: center; */
-    /* align-items: center; */
-  }
-
-.homepage{
-  background-color: #1b1b1b;
-  height: 50rem
 }
 
-.loginPage{
+.landingButtons {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  /* justify-items: center; */
+  /* align-items: center; */
+}
+/* .loginback {
   background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
   background-repeat: no-repeat;
-  height:47rem;
-  display:flex;
+  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
+  no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+} */
+
+/* .signupback {
+  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
+  no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+} */
+
+
+.loginPage {
+  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
+  no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+  height: 47rem;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* justify-content: space-around; */
 }
 
-.loginButtons{
-  height:60%;
-  display:flex;
+.loginButtons {
+  height: 60%;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
 }
 
-.signupPage{
+.signupPage {
   /* background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
-  background-repeat: no-repeat;
-  height:47rem;
-  display:flex;
-  justify-content: space-around; */
-  background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
-  background-repeat: no-repeat;
-  height:47rem;
-  display:flex;
+  background-repeat: no-repeat; */
+  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
+  no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+  height: 47rem;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#logout{
-  display:flex;
-  justify-content:flex-end;
-  padding-top:2%;
+#logout {
+  display: flex;
+  justify-content: flex-end;
+  /* padding-top:1%; */
   padding-right: 3%;
-  
+  background-color: #1b1b1b;
 }
 
-#welcomeText{
+.homepage {
+  background-color: #1b1b1b;
+  height: 47rem;
+}
+
+/* .what-to-see{
+  background-color: #1b1b1b;
+  height: 42rem;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.homepage h1 {
   color: aliceblue;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow',;
+  font-family: "FORUM", cursive;
+  justify-content: center;
+  display: flex;
+  margin-top: 20%;
+}
+
+.homepageButtons {
+  margin-top: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.results {
   display: flex;
   justify-content: center;
+  width:80%;
+}
+
+.background {
+  /* background-image: url("https://cdn.shopify.com/s/files/1/0359/4744/6409/products/A5blank_5_800x.jpg?v=1620717232"); */
+  background: url("https://cdn.shopify.com/s/files/1/0359/4744/6409/products/A5blank_5_800x.jpg?v=1620717232")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 35rem;
+}
+
+.cfg {
+  border: solid;
+  width: 25%;
 }
