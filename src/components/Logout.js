@@ -19,7 +19,7 @@ const Logout = () => {
         //   Logout
         // </button>
         <a
-        className="btn btn-outline-primary"
+        className="btn btn-outline-dark"
               href="/"
               role="button"
               style={{ width: "100%" }}

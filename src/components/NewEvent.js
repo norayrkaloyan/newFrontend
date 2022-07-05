@@ -1,54 +1,58 @@
 import axios from "axios";
+import React from "react";
 import { useContext, useState, useEffect } from "react";
 import Logout from "./Logout";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import Navbar from "./Navbar";
+//////////////////
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import TimePicker from "@mui/lab/TimePicker";
+import DateTimePicker from "@mui/lab/DateTimePicker";
+import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
+import MobileDatePicker from "@mui/lab/MobileDatePicker";
 
-const NewAddress = () => {
-  const [userInfo, setUserInfo] = useState(null);
-  const { isAuntheticated } = useContext(AuthContext);
+const NewEvent = () => {
+  const { isAuntheticated, userInfo } = useContext(AuthContext);
   // const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   //bei Form Submit post request an die API schicken
   //token, den wir zurückbekommen in localStorage speichern
   //bei erfolgreichem Signup auf die /post-login route navigieren
+  const [value, setValue] = React.useState(new Date());
+  // const [ending, setEnding] = React.useState(new Date());
+  const [datum, setDatum] = React.useState(new Date());
+  const handleChangeStart = (newValue) => {
+    console.log(newValue.toLocaleString('de-DE').split(",")[0]);
+    setDatum(newValue.toLocaleString('de-DE').split(",")[0]);
+  };
+  // const handleChangeEnd = (newValue) => {
+  //   console.log(newValue);
+  //   setEnding(newValue);
+  // };
+  // console.log(value);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log(token);
-
-    async function fetchData() {
-      let res = await axios.get(`${process.env.REACT_APP_API_URL}/info/me`, {
-        headers: { token: token },
-      });
-      setUserInfo(res.data._id);
-      // console.log(userInfo)
-      // console.log(res.data);
-    }
-    fetchData();
-  }, [userInfo]);
-
-  // console.log(userInfo);
   const user_id = userInfo;
-  console.log(user_id);
 
   const handleSubmit = async (e) => {
-    const { name, address, zip, tel, email,about } = e.target;
-    const contactData = {
+    const { title, name, address, zip, tel, email, about } = e.target;
+    const eventData = {
       user_id,
+      // ending,
+      datum,
+      title: title.value,
       name: name.value,
       address: address.value,
       zip: zip.value,
       tel: tel.value,
       email: email.value,
-      about:about.value,
+      about: about.value,
     };
 
     try {
-      await axios.post(
-        `${process.env.REACT_APP_API_URL}/contacts/`,
-        contactData
-      );
+      await axios.post(`${process.env.REACT_APP_API_URL}/events/`, eventData);
     } catch (error) {
       console.log(error);
     }
@@ -62,30 +66,30 @@ const NewAddress = () => {
         <div>
           <Navbar />
         </div>
-        
+
         <nav className="nav nav-pills">
-          <a className="nav-item nav-link " href="/newaddress">
-            Create new Contact
+          <a className="nav-item nav-link " href="/newevent">
+            Create new Event
           </a>
-          <a className="nav-item nav-link" href="/addressbook">
-            Address Book
+          <a className="nav-item nav-link" href="/calendar">
+            My Events
           </a>
         </nav>
         <form onSubmit={handleSubmit}>
           <div className="newcontactpage">
-            <h2>Let`s create new Contact</h2>
+            <h2>Let`s create new Event</h2>
             <div className="newcontactdates">
               <div className="new-name-address-zip">
                 <div className="my-2 row">
-                  <label htmlFor="name" className="col-sm-2 col-form-label">
-                    <p> Name</p>
+                  <label htmlFor="title" className="col-sm-2 col-form-label">
+                    <p> Title</p>
                   </label>
                   <div className="col-sm-15">
                     <input
                       type="text"
                       className="form-control"
-                      id="name"
-                      name="name"
+                      id="title"
+                      name="title"
                     />
                   </div>
                 </div>
@@ -117,9 +121,56 @@ const NewAddress = () => {
                     />
                   </div>
                 </div>
+                  <div className="col-sm-7" style={{ margin: "5% 30%",padding:"2%",backgroundColor:"white" }}>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <Stack spacing={3}>
+                  {/* <DateTimePicker
+                    id="starttime"
+                    name="starttime"
+                    label="Start"
+                    value={value}
+                    onChange={handleChangeStart}
+                    renderInput={(params) => <TextField {...params} />}
+                  /> */}
+                  <DesktopDatePicker
+                    id="starttime"
+                    name="starttime"
+                    label="Datum"
+                    inputFormat="dd/MM/yyyy"
+                    value={value}
+                    onChange={handleChangeStart}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                  {/* <DateTimePicker
+                    id="endtime"
+                    name="endtime"
+                    label="End "
+                    value={value}
+                    onChange={handleChangeEnd}
+                    renderInput={(params) => <TextField {...params} />}
+                  /> */}
+                </Stack>
+              </LocalizationProvider>
+            </div>
+                
+                {/* /////////// */}
               </div>
 
               <div className="new-tel-email">
+                <div className="my-2 row">
+                  <label htmlFor="name" className="col-sm-2 col-form-label">
+                    <h6>Contact Infos:</h6>
+                    <p> Name</p>
+                  </label>
+                  <div className="col-sm-15">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="name"
+                      name="name"
+                    />
+                  </div>
+                </div>
                 <div className="mb-3 row">
                   <label htmlFor="tel" className="col-sm-2 col-form-label">
                     <p> Tel</p>
@@ -163,11 +214,9 @@ const NewAddress = () => {
                 </div>
               </div>
             </div>
+            
             <div className="contact-btn">
-              <button
-                type="submit"
-                className="btn btn-outline-primary btn-lg"
-              >
+              <button type="submit" className="btn btn-outline-primary btn-lg">
                 Create
               </button>
             </div>
@@ -179,4 +228,4 @@ const NewAddress = () => {
   );
 };
 
-export default NewAddress;
+export default NewEvent;

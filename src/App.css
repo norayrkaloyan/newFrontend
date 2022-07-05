@@ -39,18 +39,65 @@
   }
 } */
 
+.navs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkkhaki;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* .navs li {
+  float: left;
+} */
+
+.navs li a {
+  display: block;
+  color: #1b1b1b;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: xx-large;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: khaki;
+}
+
+.nav {
+  padding-top: 3%;
+  /* padding-bottom: 1%; */
+  /* justify-content: center; */
+  background-color: #1b1b1b;
+}
+
+.nav-item {
+  margin: 3%;
+  font-family: "Forum", cursive;
+}
+
+.nav-item:hover {
+  background-color: #494949;
+}
+
 .landingPage {
-  background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
-  background-repeat: no-repeat;
+  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   height: 47rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* justify-content: space-around; */
-  /* display:flex;
-
-    justify-content: center;
-    justify-content: space-around; */
 }
 
 .landingButtons {
@@ -59,37 +106,15 @@
   justify-content: center;
   flex-direction: column;
   justify-content: space-around;
-  /* justify-items: center; */
-  /* align-items: center; */
 }
-/* .loginback {
-  background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
-  background-repeat: no-repeat;
-  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
-  no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-} */
-
-/* .signupback {
-  background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
-  no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-} */
-
 
 .loginPage {
   background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
-  no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   height: 47rem;
   display: flex;
   flex-direction: column;
@@ -110,11 +135,11 @@ background-size: cover;
   /* background-image: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg");
   background-repeat: no-repeat; */
   background: url("https://i.pinimg.com/originals/e5/4e/2e/e54e2ef0a33bbab5be4c0b199d03b786.jpg")
-  no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   height: 47rem;
   display: flex;
@@ -133,24 +158,15 @@ background-size: cover;
 
 .homepage {
   background-color: #1b1b1b;
-  height: 47rem;
-}
-
-/* .what-to-see{
-  background-color: #1b1b1b;
-  height: 42rem;
-  align-items: center;
-  display:flex;
-  flex-direction: column;
+  height: 45rem;
+  display: flex;
   justify-content: center;
-} */
+  align-items: center;
+}
 
 .homepage h1 {
   color: aliceblue;
   font-family: "FORUM", cursive;
-  justify-content: center;
-  display: flex;
-  margin-top: 20%;
 }
 
 .homepageButtons {
@@ -161,24 +177,285 @@ background-size: cover;
   justify-content: space-around;
 }
 
-.results {
-  display: flex;
-  justify-content: center;
-  width:80%;
-}
-
 .background {
   /* background-image: url("https://cdn.shopify.com/s/files/1/0359/4744/6409/products/A5blank_5_800x.jpg?v=1620717232"); */
-  background: url("https://cdn.shopify.com/s/files/1/0359/4744/6409/products/A5blank_5_800x.jpg?v=1620717232")
-    no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 35rem;
+  /* background-image: url("./media/myNotes2.jpg"); */
+  /* no-repeat center center fixed;   */
+  /* -webkit-background-size: cover; */
+  /* -moz-background-size: cover; */
+  /* -o-background-size: cover; */
+  /* background-size: cover; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-color: #cdcfa2; */
+  background-color: khaki;
+}
+.paging {
+  background-color: #1b1b1b;
+  padding-top: 1%;
+}
+.page-limk {
+  color: khaki;
 }
 
+.newNotePage {
+  background-color: #1b1b1b;
+}
+
+#extra {
+  background-color: #1b1b1b;
+  height: 36rem;
+}
+
+.newNotePage p {
+  color: aliceblue;
+  font-family: "FORUM", cursive;
+  font-size: xx-large;
+  margin-left: 50%;
+}
+
+#btn {
+  display: flex;
+  justify-content: center;
+}
+
+.newNotePage button {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.newcontactpage {
+  background-color: #1b1b1b;
+  height: 47rem;
+}
+
+.newcontactdates {
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.newcontactpage h2 {
+  color: aliceblue;
+  font-family: "FORUM", cursive;
+  justify-content: center;
+  display: flex;
+}
+.newcontactdates p {
+  color: aliceblue;
+  font-family: "FORUM", cursive;
+}
+
+.newcontactdates h6 {
+  color: aliceblue;
+  font-weight: bold;
+  font-family: "FORUM", cursive;
+}
+.contact-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.new-name-address-zip {
+  width: 30%;
+}
 .cfg {
-  border: solid;
-  width: 25%;
+  border-bottom: 3px solid;
+  border-right: 1px solid;
+  font-size: large;
+  margin-top: 2%;
+  /* padding-top:3%; */
+  padding-bottom: 1%;
+}
+
+.col-1 {
+  margin-left: 5%;
+  /* padding-left: 2%; */
+  width: 17%;
+  word-wrap: break-word;
+}
+.col-2 {
+  width: 15%;
+  min-width: 15%;
+
+  word-wrap: break-word;
+}
+.col-3 {
+  width: 7%;
+  word-wrap: break-word;
+}
+.col-4 {
+  width: 11%;
+  word-wrap: break-word;
+}
+.col-5 {
+  width: 20%;
+  word-wrap: break-word;
+}
+.col-6 {
+  width: 17%;
+  word-wrap: break-word;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+}
+.col-7 {
+  width: 5%;
+}
+
+.mycalendar {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* .eventsDisplay{
+  min-width:35%;
+} */
+/* .coll-1 {
+  margin-left: 5%;
+  width: 17%;
+  word-wrap: break-word;
+}
+.coll-2 {
+
+  width: 15%;
+  word-wrap: break-word;
+}
+
+.coll-3 {
+
+  width: 10%;
+  word-wrap: break-word;
+}
+.coll-4 {
+
+  width: 11%;
+  word-wrap: break-word;
+}
+.coll-5 {
+
+  width: 20%;
+  word-wrap: break-word;
+}
+.coll-6 {
+
+  width: 17%;
+  word-wrap: break-word;
+}
+.coll-7 {
+
+  width: 5%;
+}*/
+
+.cffg {
+  border-bottom: 3px solid;
+  font-size: large;
+  margin-top: 2%;
+  padding-bottom: 1%;
+}
+.notes {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7%;
+  /* align-items: center; */
+  /* padding-bottom: 2%; */
+}
+.titles {
+  width: 80%;
+  margin-top: 1%;
+  padding-left: 2%;
+  margin-bottom: 1%;
+  font-size: xx-large;
+  display: flex;
+  justify-content: space-between;
+}
+.descriptions {
+  width: 80%;
+  font-size: large;
+  border-bottom: 3px solid;
+  padding-bottom: 1%;
+}
+.mustlogin {
+  background-color: #1b1b1b;
+  color: aliceblue;
+  font-family: "FORUM", cursive;
+  height: 12rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+.row {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none; /* Remove default text underline */
+}
+
+/* //////////////////////////////// */
+/* .mbsc-calendar .quarter-year-header-picker .mbsc-segmented {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.quarter-year-header-picker {
+  flex: 1 0 auto;
+} */
+
+/* ///////////////////////////////// */
+.calendar-container {
+  width: 100%;
+}
+
+.react-calendar {
+  width: 400px;
+  max-width: 100%;
+  background-color: #fff;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+}
+.react-calendar__navigation button {
+  color: #123053;
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f8f8fa;
+}
+.react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+}
+abbr[title] {
+  text-decoration: none;
+}
+
+/* .entriesContainer{
+  display:flex;
+  justify-content: space-between;
+ }
+ .notesDisplay{
+  width:70%
+ } */
+.app {
+  /* display: flex; */
+  background-color: khaki;
 }

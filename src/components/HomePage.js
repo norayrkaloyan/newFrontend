@@ -1,6 +1,5 @@
-import {  useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import Logout from "./Logout";
 import LandingPage from "./LandingPage";
 
 const HomePage = () => {
@@ -9,31 +8,15 @@ const HomePage = () => {
   //mithilfe der Response werden ein paar Userinfos angezeigt
   //Wenn User nicht eingeloggt, zur Landing Page navigieren
 
-  // const [userInfo, setUserInfo] = useState(null);
   const { isAuthenticated } = useContext(AuthContext);
 
-  // const handleClick = async () => {
-  //   const token = localStorage.getItem("token");
-  //   console.log(token);
-  //   try {
-  //     const res = await axios.get(
-  //       `${process.env.REACT_APP_API_URL}/info/me`,
-  //       { headers: { token: token } }
-  //     );
-  //     setUserInfo(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
+  
   return (
     <>
       {isAuthenticated ? (
         <>
+      
           <div className="homepage">
-            <div id="logout">
-              <Logout />
-            </div>
             <div className="what-to-see">
               <h1 className="display-1">What would you like to see?</h1>
               <div className="homepageButtons">
