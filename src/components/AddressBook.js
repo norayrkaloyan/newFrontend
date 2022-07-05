@@ -1,128 +1,99 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import axios from "axios";
+import Pagination from "./Pagination";
+// import { ClipLoader } from "react-spinners";
 
 const AddressBook = () => {
-  const { isAuntheticated, results } = useContext(AuthContext);
+  const { isAuntheticated, results, setResults, userInfo } =
+    useContext(AuthContext);
+  const [articlesPerPage] = useState(8); //defining how many articles per page we want
+  const [currentPage, setCurrentPage] = useState(1); //defining that we will start at page 1
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
   if (isAuntheticated) return <Navigate to="/" />;
-  // e.preventDefault()
-  // const [results, setResults] = useState(); //represents the articles we get as response
-  // const [userInfo, setUserInfo] = useState(null);
-  // const [query, setQuery] = useState("");
-  // const [myContacts,setMyContacts] = useState();
 
-  // useEffect(() => {
-  //    const getAllContactsByUserId = async () => {
-  //     const token = localStorage.getItem("token");
-  //     await axios
-  //       .get(`${process.env.REACT_APP_API_URL}/info/me`, {
-  //         headers: { token: token },
-  //       })
-  //       .then((res) => {
-  //         console.log(res.data._id);
-  //         setUserInfo(res.data._id);
-  //       })
-  //       .catch((err) => console.log(err));
-  //     await axios
-  //       .get(`${process.env.REACT_APP_API_URL}/contacts/${userInfo}`)
-  //       .then((response) => {
-  //         console.log(response.data);
-  //         setResults(response.data);
-  //       })
-  //       .catch((error) => console.log(error));
-  //   };
-  //   getAllContactsByUserId()
-  //   // setMyContacts(getAllContactsByUserId());
-  //   //console.log(token);
-  // }, [userInfo]);
-
+  const handleClick = async (event) => {
+    console.log(event.target.name);
+    const contactToDelete = event.target.name;
+    await axios
+      .delete(
+        `${process.env.REACT_APP_API_URL}/contacts/delete/${contactToDelete}`
+      )
+      .then((res) => {
+        setResults(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <>
       {!isAuntheticated ? (
         <>
           <div>
+            <Navbar />
+          </div>
+          <div>
             <nav className="nav nav-pills">
               <a className="nav-item nav-link " href="/newaddress">
-                Contact Form
+                Create new Contact
               </a>
-              <a className="nav-item nav-link active" href="/addressbook">
+              <a className="nav-item nav-link " href="/addressbook">
                 Address Book
               </a>
             </nav>
           </div>
-          <div className="background">
-            {results ? (
-              results.map((results) => (
+          {results ? (
+            results
+              .slice(indexOfFirstArticle, indexOfLastArticle)
+              .map((results) => (
                 <>
-                  <div>
-                    <div className="results" key={results._id}>
-                      <div className="names cfg">
-                        <div>{results.name}</div>
-                      </div>
-                      <div className="adresses cfg">
-                        <div>{results.address}</div>
-                      </div>
-                      <div className="zip cfg">
-                        <div>{results.zip}</div>
-                      </div>
-                      <div className="tel cfg">
-                        <div>{results.tel}</div>
-                      </div>
-                      <div className="email cfg">
-                        <div>{results.email}</div>
-                      </div>
-                    </div>
+                  <div className="background">
+                    <ul className="row" id="myUl" key={results._id}>
+                      <li className="col-1 cfg">{results.name}</li>
+                      <li className="col-2 cfg">{results.address}</li>
+                      <li className="col-3 cfg">{results.zip}</li>
+                      <li className="col-4 cfg">{results.tel}</li>
+                      <li className="col-5 cfg">{results.email}</li>
+                      <li className="col-6 cfg">{results.about}</li>
+                      <li className="col-7 cfg">
+                        <button
+                          name={results._id}
+                          onClick={handleClick}
+                          type="button"
+                          className="btn-close"
+                          aria-label="Close"
+                        ></button>
+                      </li>
+                      <div></div>
+                    </ul>
                   </div>
                 </>
               ))
-            ) : (
-              <div></div>
-            )}
-          </div>
+          ) : (
+            <div></div>
+            // <h1 className="mustlogin">Please go Home and login</h1>
+          )}
+          {results && (
+            <Pagination
+              articlesPerPage={articlesPerPage}
+              totalNumberOfArticles={results.length}
+              paginate={paginate}
+            />
+          )}
         </>
       ) : (
-        <Navigate to="/" />
+        <Navigate to="/homepage" />
       )}
+      <div id="extra"></div>
     </>
   );
 };
 
 export default AddressBook;
 
-// <>
-// <div>
-// <nav class="nav nav-pills">
-//     <a class="nav-item nav-link " href="/newaddress">Contact Form</a>
-//     <a class="nav-item nav-link active" href="/addressbook">Address Book</a>
-//   </nav>
-// </div>
-//   <div className="background">
-//     {results ? (
-//       results.map((results) => (
-//         <>
-//           <div>
-//             <div className="results" key={results._id}>
-//               <div className="names cfg">
-//                 <div>{results.name}</div>
-//               </div>
-//               <div className="adresses cfg">
-//                 <div>{results.address}</div>
-//               </div>
-//               <div className="zip cfg">
-//                 <div>{results.zip}</div>
-//               </div>
-//               <div className="tel cfg">
-//                 <div>{results.tel}</div>
-//               </div>
-//               <div className="email cfg">
-//                 <div>{results.email}</div>
-//               </div>
-//             </div>
-//           </div>
-//         </>
-//       ))
-//     ) : (
-//       <div></div>
-//     )}
-//   </div>
-// </>
+
