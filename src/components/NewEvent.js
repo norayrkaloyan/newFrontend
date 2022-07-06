@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useContext, useState, useEffect } from "react";
-import Logout from "./Logout";
+import { useContext} from "react";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import Navbar from "./Navbar";
@@ -10,10 +9,7 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import TimePicker from "@mui/lab/TimePicker";
-import DateTimePicker from "@mui/lab/DateTimePicker";
 import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
-import MobileDatePicker from "@mui/lab/MobileDatePicker";
 
 const NewEvent = () => {
   const { isAuntheticated, userInfo } = useContext(AuthContext);
@@ -21,7 +17,7 @@ const NewEvent = () => {
   //bei Form Submit post request an die API schicken
   //token, den wir zurückbekommen in localStorage speichern
   //bei erfolgreichem Signup auf die /post-login route navigieren
-  const [value, setValue] = React.useState(new Date());
+  const [value] = React.useState(new Date());
   // const [ending, setEnding] = React.useState(new Date());
   const [datum, setDatum] = React.useState(new Date());
   const handleChangeStart = (newValue) => {

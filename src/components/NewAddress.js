@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useContext, useState, useEffect } from "react";
-import Logout from "./Logout";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import Navbar from "./Navbar";
@@ -8,7 +7,6 @@ import Navbar from "./Navbar";
 const NewAddress = () => {
   const [userInfo, setUserInfo] = useState(null);
   const { isAuntheticated } = useContext(AuthContext);
-  // const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   //bei Form Submit post request an die API schicken
   //token, den wir zurückbekommen in localStorage speichern
   //bei erfolgreichem Signup auf die /post-login route navigieren
