@@ -7,7 +7,7 @@ import Pagination from "./Pagination";
 // import { ClipLoader } from "react-spinners";
 
 const AddressBook = () => {
-  const { isAuntheticated, results, setResults, userInfo } =
+  const { isAuntheticated, results, setResults } =
     useContext(AuthContext);
   const [articlesPerPage] = useState(8); //defining how many articles per page we want
   const [currentPage, setCurrentPage] = useState(1); //defining that we will start at page 1

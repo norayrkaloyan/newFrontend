@@ -11,7 +11,6 @@ const CalendarPage = (e) => {
   const { isAuntheticated, events, setEvents } = useContext(AuthContext);
   const [date, setDate] = useState(new Date());
   const [datum, setDatum] = useState();
-  const [rests, setRests] = useState();
 
   const selectedDate = date.toLocaleString("de-DE").split(",")[0];
   const handleClick = async (event) => {
@@ -96,9 +95,11 @@ const CalendarPage = (e) => {
                         </li>
                         <li className="col-2 cffg">{datum.address}</li>
                         <li className="col-3 cffg">{datum.zip}</li>
-                        <li className="col-4 cffg">{datum.tel}</li>
+                        <li className="col-4 cffg ">
+                          {datum.tel}
+                        </li>
                         <li className="col-5 cffg">{datum.email}</li>
-                        <li className="col-6 cffg">{datum.about}</li>
+                        <li className="col-6 cffg coll-4">{datum.name}{datum.about}</li>
                         <li className="col-7 cffg">
                           <button
                             name={datum._id}
